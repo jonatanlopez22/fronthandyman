@@ -1,0 +1,137 @@
+<div class="main-content" style="margin-top: 50px;">
+  <div class="row " style="justify-content:center">
+    <div class="col-md-8 ">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">REPORTE DE SERVICIO</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="calcularForm" (ngSubmit)="validar()">
+            <div class="row ">
+              <div class="col-md-6 px-1">
+                <div class="form-group text-center">
+                  <label>ID empleado</label>
+                  <input formControlName="idEmpleado" type="number" class="form-control" placeholder="idEmpleado">
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group text-center">
+                  <label>ID servicio</label>
+                  <input formControlName="idServicio"  type="number" class="form-control" placeholder="idServicio"
+                   >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>hora de inicio</label>
+                  <select class="form-control select" formControlName="horaI" >
+                    <option value="">----</option>
+                    <option value=1>1 am</option>
+                    <option value=2>2 am</option>
+                    <option value=3>3 am</option>
+                    <option value=4>4 am</option>
+                    <option value=5>5 am</option>
+                    <option value=6>6 am</option>
+                    <option value=7>7 am</option>
+                    <option value=8>8 am</option>
+                    <option value=9>9 am</option>
+                    <option value=10>10 am</option>
+                    <option value=11>11 am</option>
+                    <option value=12>12 pm</option>
+                    <option value=13>1 pm</option>
+                    <option value=14>2 pm</option>
+                    <option value=15>3 pm</option>
+                    <option value=16>4 pm</option>
+                    <option value=17>5 pm</option>
+                    <option value=18>6 pm</option>
+                    <option value=19>7 pm</option>
+                    <option value=20>8 pm</option>
+                    <option value=21>9 pm</option>
+                    <option value=22>10 pm</option>
+                    <option value=23>11 pm</option>
+                    <option value=0>12 am</option>
+
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>hora de finalizacion</label>
+                  <select class="form-control select" formControlName="horaF">
+                    <option value="">----</option>
+                    <option value=1>1 am</option>
+                    <option value=2>2 am</option>
+                    <option value=3>3 am</option>
+                    <option value=4>4 am</option>
+                    <option value=5>5 am</option>
+                    <option value=6>6 am</option>
+                    <option value=7>7 am</option>
+                    <option value=8>8 am</option>
+                    <option value=9>9 am</option>
+                    <option value=10>10 am</option>
+                    <option value=11>11 am</option>
+                    <option value=12>12 pm</option>
+                    <option value=13>1 pm</option>
+                    <option value=14>2 pm</option>
+                    <option value=15>3 pm</option>
+                    <option value=16>4 pm</option>
+                    <option value=17>5 pm</option>
+                    <option value=18>6 pm</option>
+                    <option value=19>7 pm</option>
+                    <option value=20>8 pm</option>
+                    <option value=21>9 pm</option>
+                    <option value=22>10 pm</option>
+                    <option value=23>11 pm</option>
+                    <option value=0>12 am</option>
+
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <div class="text-center">
+                    <label for="">seleccione fecha de inicio</label>
+                    <br>
+                    <input type="date" formControlName="fechaI" min="2021-07-01" max="2021-12-31">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="text-center">
+                    <label for="">seleccione fecha de finalizacion</label>
+                    <br>
+                    <input type="date" formControlName="fechaF" min="2021-07-01" max="2021-12-31">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <br>
+              <hr>
+
+              <div class="row" *ngIf="showValidar">
+                <button type="submit" class="btn btn-dark" >validarCampos</button>
+              </div>
+
+              
+              <div class="row" *ngIf="showCalcular">
+                <button  class="btn btn-info" (click)="calcular()">calcular</button>
+              </div>
+
+              
+              <div class="row" *ngIf="showEnviar">
+                <button  class="btn btn-success" (click)="enviar()" >Enviar Reporte </button>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
